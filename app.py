@@ -21,6 +21,19 @@ st.dataframe(df.describe())
 
 
 
+st.subheader("Retail Dashboard")
+
+st.metric("Total Revenue", df["Revenue_ZAR"].sum())
+
+st.metric("Total Transactions", len(df))
+
+st.metric("Items Sold", df["Quantity"].sum())
+
+st.metric("Average Revenue", round(df["Revenue_ZAR"].mean(), 2))
+
+
+
+
 
 
 
