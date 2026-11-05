@@ -41,25 +41,6 @@ st.dataframe(filtered[columns])
 
 
 
-
-st.subheader("Retail Sales Charts")
-
-st.write("Revenue by Category")
-sales = df.groupby("Category")["Revenue_ZAR"].sum()
-st.pyplot(sales.plot.bar().figure)
-
-st.write("Revenue by Store")
-stores = df.groupby("Store")["Revenue_ZAR"].sum()
-st.pyplot(stores.plot.pie().figure)
-
-st.write("Transaction Revenue Distribution")
-st.pyplot(df["Revenue_ZAR"].plot.hist().figure)
-
-
-
-
-
-
 st.subheader("Retail Sales Charts")
 
 # Bar chart - Revenue by Category
