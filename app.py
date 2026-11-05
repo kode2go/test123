@@ -34,3 +34,56 @@ category = st.selectbox("Select Category", df["Category"].unique())
 filtered = df[df["Category"] == category]
 
 st.dataframe(filtered[columns])
+
+
+
+
+
+
+
+
+st.subheader("Retail Sales Charts")
+
+st.write("Revenue by Category")
+sales = df.groupby("Category")["Revenue_ZAR"].sum()
+st.pyplot(sales.plot.bar().figure)
+
+st.write("Revenue by Store")
+stores = df.groupby("Store")["Revenue_ZAR"].sum()
+st.pyplot(stores.plot.pie().figure)
+
+st.write("Transaction Revenue Distribution")
+st.pyplot(df["Revenue_ZAR"].plot.hist().figure)
+
+
+
+
+
+
+st.subheader("Retail Sales Charts")
+
+# Bar chart - Revenue by Category
+st.write("Revenue by Category")
+sales = df.groupby("Category")["Revenue_ZAR"].sum()
+st.bar_chart(sales)
+
+# Line chart - Revenue by Date
+st.write("Revenue Over Time")
+sales = df.groupby("Date")["Revenue_ZAR"].sum()
+st.line_chart(sales)
+
+# Bar chart - Revenue by Store
+st.write("Revenue by Store")
+sales = df.groupby("Store")["Revenue_ZAR"].sum()
+st.bar_chart(sales)
+
+# Bar chart - Top 5 Products
+st.write("Top 5 Products")
+sales = df.groupby("Product")["Revenue_ZAR"].sum()
+sales = sales.sort_values(ascending=False).head(5)
+st.bar_chart(sales)
+
+# Scatter chart - Quantity vs Revenue
+st.write("Quantity vs Revenue")
+st.scatter_chart(df, x="Quantity", y="Revenue_ZAR")
+
