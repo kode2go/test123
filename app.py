@@ -5,6 +5,8 @@ st.title("Retail Analytics Dashboard")
 
 file = st.file_uploader("Upload CSV", type="csv")
 
+if file is None: st.stop()
+
 df = pd.read_csv(file)
 
 st.subheader("Dataset")
