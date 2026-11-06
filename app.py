@@ -3,7 +3,7 @@ import pandas as pd
 
 st.title("Retail Analytics Dashboard")
 
-if st.button("Balloons"): st.baloons()
+if st.button("Balloons"): st.balloons()
 
 file = st.file_uploader("Upload CSV", type="csv")
 
