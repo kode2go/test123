@@ -3,6 +3,8 @@ import pandas as pd
 
 st.title("Retail Analytics Dashboard")
 
+if st.button("Balloons"): st.baloons()
+
 file = st.file_uploader("Upload CSV", type="csv")
 
 if file is None: st.stop()
